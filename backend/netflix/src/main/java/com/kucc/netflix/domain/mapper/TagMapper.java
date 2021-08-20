@@ -1,7 +1,6 @@
 package com.kucc.netflix.domain.mapper;
 
 import com.kucc.netflix.domain.dto.TagDto;
-import com.kucc.netflix.domain.dto.UserDto;
 import com.kucc.netflix.domain.entity.Tag;
 import com.kucc.netflix.domain.entity.User;
 import org.mapstruct.Mapper;

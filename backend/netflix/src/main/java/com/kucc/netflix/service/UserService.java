@@ -6,6 +6,7 @@ import com.kucc.netflix.domain.mapper.UserMapper;
 import com.kucc.netflix.domain.mapper.UserMapperImpl;
 import com.kucc.netflix.domain.repository.UserRepository;
 import com.kucc.netflix.exception.UserNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,8 @@ import java.util.List;
 public class UserService implements UserDetailsService {
 
   private final UserRepository userRepository;
+
+  @Autowired
   private final UserMapperImpl userMapper;
 
   public UserService(UserRepository userRepository, UserMapperImpl userMapper){
