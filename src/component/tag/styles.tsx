@@ -15,4 +15,5 @@ export const DeleteImage = styled.img`
   width: 1.5rem;
   height: 1.5rem;
   margin-left: 0.2rem;
+  cursor: pointer;
 `;

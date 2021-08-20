@@ -46,12 +46,13 @@ export const CoreInfoWrapper = styled.div`
 export const LabelWrapper = styled.div`
   display: grid;
   grid-template-columns: 6.5rem 1fr;
-  align-items: center;
+  align-items: flex-start;
 `;
 
 export const Label = styled.span`
   font-size: 1.2rem;
   font-weight: 700;
+  margin: auto 0;
 `;
 
 export const Input = styled.input`

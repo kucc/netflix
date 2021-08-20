@@ -2,7 +2,7 @@ import * as S from "./styles";
 import { MainContainer } from "../../component/global-style/mainContainer";
 import Toggle from "../../component/toggle";
 import { useInput } from "../../hook/useInput";
-import Tag from "../../component/tag";
+import TagInput from "../../component/tagInput";
 
 export default function Profile() {
   const { value: nameValue, onChange: onNameChange } = useInput();
@@ -13,6 +13,7 @@ export default function Profile() {
   const { value: emailValue, onChange: onEmailChange } = useInput();
   const { value: githubValue, onChange: onGithubChange } = useInput();
   const { value: blogValue, onChange: onBlogChange } = useInput();
+  const tags = ["React", "Django", "Javascript"];
 
   return (
     <MainContainer>
@@ -48,7 +49,7 @@ export default function Profile() {
         <S.SubInfoWrapper>
           <S.LabelWrapper>
             <S.Label>취미</S.Label>
-            <Tag canDelete>유튜브</Tag>
+            <TagInput tags={tags} />
           </S.LabelWrapper>
           <S.LabelWrapper>
             <S.Label>관심 분야</S.Label>
