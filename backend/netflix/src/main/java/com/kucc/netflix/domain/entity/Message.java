@@ -1,5 +1,6 @@
 package com.kucc.netflix.domain.entity;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -8,7 +9,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="MESSAGE")
-@Getter
+@Getter @Builder
 @NoArgsConstructor
 public class Message {
 
