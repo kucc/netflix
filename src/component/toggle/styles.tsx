@@ -9,6 +9,7 @@ export const Button = styled.button<{ isToggleOn: boolean }>`
   border: none;
   display: flex;
   align-items: center;
+
   ${(props) =>
     props.isToggleOn &&
     css`
