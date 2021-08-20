@@ -45,6 +45,7 @@ public class User implements UserDetails {
 
   @Column(name="hobby")
   @Setter
+  private String hobby;
 
   @Column(name="interest")
   @Setter
@@ -61,10 +62,6 @@ public class User implements UserDetails {
   @Column(name="comment")
   @Setter
   private String comment;
-
-  @Column(name="hobby")
-  @Setter
-  private String hobby;
 
   @Column(name="phone")
   @Setter
@@ -86,13 +83,17 @@ public class User implements UserDetails {
   @Setter
   private Boolean useYn;
 
+  public User(String email, String password) {
+    this.email = email;
+    this.password = password;
+    this.useYn = true;
+  }
 
   @Builder
   public User(String email, String password, String job,String major,String hobby,String interest,String stack,
               String etc,String comment,String phone, String github,String blog,String joinDate){
     this.email = email;
     this.password = password;
-    this.useYn = true;
     this.job = job;
     this.major=major;
     this.hobby=hobby;

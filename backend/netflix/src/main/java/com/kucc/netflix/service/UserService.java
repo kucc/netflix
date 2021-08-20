@@ -3,6 +3,7 @@ package com.kucc.netflix.service;
 import com.kucc.netflix.domain.dto.UserDto;
 import com.kucc.netflix.domain.entity.User;
 import com.kucc.netflix.domain.mapper.UserMapper;
+import com.kucc.netflix.domain.mapper.UserMapperImpl;
 import com.kucc.netflix.domain.repository.UserRepository;
 import com.kucc.netflix.exception.UserNotFoundException;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,9 +18,11 @@ import java.util.List;
 public class UserService implements UserDetailsService {
 
   private final UserRepository userRepository;
+  private final UserMapperImpl userMapper;
 
-  public UserService(UserRepository userRepository){
+  public UserService(UserRepository userRepository, UserMapperImpl userMapper){
     this.userRepository = userRepository;
+    this.userMapper = userMapper;
   }
 
   public UserDto.Response getUserProfile(Long id){
@@ -28,7 +31,7 @@ public class UserService implements UserDetailsService {
           if (!user.getUseYn()){
             throw new UserNotFoundException();
           }
-          return UserMapper.INSTANCE.toDto(user);
+          return userMapper.toDto(user);
         })
         .orElseGet(() ->{
           throw new UserNotFoundException();
@@ -38,12 +41,12 @@ public class UserService implements UserDetailsService {
   public List<UserDto.Response> getUserProfileList(String tag){
     Collection<User> collection = userRepository.findByTag(tag);
     List<User> userList = new ArrayList<User>(collection);
-    return UserMapper.INSTANCE.toDto(userList);
+    return userMapper.toDto(userList);
   }
 
   public  UserDto.Response writeUserProfile (UserDto.Request req){
-    User user = userRepository.save(UserMapper.INSTANCE.toEntity(req));
-    return UserMapper.INSTANCE.toDto(user);
+    User user = userRepository.save(userMapper.toEntity(req));
+    return userMapper.toDto(user);
   }
 
   public  UserDto.Response editUserProfile (Long id, UserDto.Request req){
@@ -73,7 +76,7 @@ public class UserService implements UserDetailsService {
           return user;
         })
         .map(userRepository::save)
-        .map(UserMapper.INSTANCE::toDto)
+        .map(userMapper::toDto)
         .orElseGet(() -> {
           throw new UserNotFoundException();
         });
@@ -84,7 +87,7 @@ public class UserService implements UserDetailsService {
     .map(user -> {
       Boolean useYn = user.getUseYn();
       user.setUseYn(!useYn);
-      return UserMapper.INSTANCE.toDto(userRepository.save(user));
+      return userMapper.toDto(userRepository.save(user));
     }).orElseGet(() -> {
       throw new UserNotFoundException();
     });

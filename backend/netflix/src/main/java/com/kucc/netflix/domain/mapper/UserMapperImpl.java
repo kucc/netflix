@@ -2,10 +2,12 @@ package com.kucc.netflix.domain.mapper;
 
 import com.kucc.netflix.domain.dto.UserDto;
 import com.kucc.netflix.domain.entity.User;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class UserMapperImpl implements UserMapper{
   @Override
   public User toEntity(UserDto.Request req) {
@@ -37,7 +39,11 @@ public class UserMapperImpl implements UserMapper{
 
   @Override
   public List<UserDto.Response> toDto(List<User> list) {
-    return null;
+    List<UserDto.Response> res = new ArrayList<>();
+    for(User user: list){
+      res.add(this.toDto(user));
+    }
+    return res;
   }
 
   @Override
@@ -67,6 +73,6 @@ public class UserMapperImpl implements UserMapper{
         .phone(user.getPhone())
         .github(user.getGithub())
         .blog(user.getBlog())
-        .joinDate(user.getJoinDate()) .build();
+        .joinDate(user.getJoinDate()).build();
   }
 }
