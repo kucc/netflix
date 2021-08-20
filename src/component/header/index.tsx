@@ -13,12 +13,12 @@ export default function Header() {
           <S.Title>이지민 짱!</S.Title>
         </div>
         <div>
-          <S.NotiButton hasNoti={true}>
-            <Notifications />
-          </S.NotiButton>
           <S.ProfileButton
             onClick={() => setIsProfileModalOpen(!isProfileModalOpen)}
           >
+            <S.NotiButton hasNoti={true}>
+              <Notifications />
+            </S.NotiButton>
             <S.Name>김기융</S.Name>
             <S.Profile src="https://images-na.ssl-images-amazon.com/images/I/81BES%2BtsVvL.png"></S.Profile>
             <S.ProfileModal isProfileModalOpen={isProfileModalOpen}>

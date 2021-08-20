@@ -1,10 +1,9 @@
 import * as S from "./styles";
 import Toggle from "../../component/toggle";
 import TagInput from "../../component/tagInput";
-import { MainContainer } from "../../component/globalStyle/mainContainer";
 import { useInput } from "../../hooks/useInput";
-import Header from "../../component/header";
 import Layout from "../../component/layout";
+import { Photo } from "@material-ui/icons";
 
 export default function MyProfile() {
   const { value: nameValue, onChange: onNameChange } = useInput();
@@ -26,85 +25,74 @@ export default function MyProfile() {
           <Toggle />
         </S.ToggleWrapper>
       </S.TitleWrapper>
-      <S.ProfileImageWrapper>
-        <S.ProfileImage />
-        <S.CoreInfoWrapper>
-          <S.LabelWrapper>
-            <S.Label>이름</S.Label>
-            <S.Input value={nameValue} onChange={onNameChange} />
-          </S.LabelWrapper>
-          <S.LabelWrapper>
-            <S.Label>학과</S.Label>
-            <S.Input
-              value={majorValue}
-              onChange={onMajorChange}
-              placeholder="XX학과"
-            />
-          </S.LabelWrapper>
-          <S.LabelWrapper>
-            <S.Label>소속</S.Label>
-            <S.Input
-              value={jobValue}
-              onChange={onJobChange}
-              placeholder="대학생/대학원생/직장인(XX 회사)"
-            />
-          </S.LabelWrapper>
-          <S.LabelWrapper>
-            <S.Label>가입시기</S.Label>
-            <S.Input
-              value={joinDateValue}
-              onChange={onJoinDateChange}
-              placeholder="2021년 1학기"
-            />
-          </S.LabelWrapper>
-        </S.CoreInfoWrapper>
-      </S.ProfileImageWrapper>
-      <S.SubInfoWrapper>
+      <S.ProfileImage
+        src={
+          "https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9"
+        }
+      >
+        <Photo />
+      </S.ProfileImage>
+      <S.CoreInfoWrapper>
         <S.LabelWrapper>
+          <S.Label>이름*</S.Label>
+          <S.Input value={nameValue} onChange={onNameChange} />
+          <S.Label>학과</S.Label>
+          <S.Input
+            value={majorValue}
+            onChange={onMajorChange}
+            placeholder="XX학과"
+          />
+          <S.Label>소속</S.Label>
+          <S.Input
+            value={jobValue}
+            onChange={onJobChange}
+            placeholder="대학생/대학원생/직장인(XX 회사)"
+          />
+          <S.Label>가입시기</S.Label>
+          <S.Input
+            value={joinDateValue}
+            onChange={onJoinDateChange}
+            placeholder="2021-1"
+          />
+        </S.LabelWrapper>
+      </S.CoreInfoWrapper>
+      <S.SubInfoWrapper>
+        <S.TagWrapper>
           <S.Label>취미</S.Label>
           <TagInput tags={tags} />
-        </S.LabelWrapper>
-        <S.LabelWrapper>
           <S.Label>관심 분야</S.Label>
-        </S.LabelWrapper>
-        <S.LabelWrapper>
+          <TagInput tags={tags} />
           <S.Label>기술 스택</S.Label>
-        </S.LabelWrapper>
-        <S.LabelWrapper>
+          <TagInput tags={tags} />
           <S.Label>기타</S.Label>
-        </S.LabelWrapper>
-        <S.LabelWrapper>
+          <TagInput tags={tags} />
+        </S.TagWrapper>
+        <S.ContactWrapper>
           <S.Label>전화번호</S.Label>
           <S.Input
             value={phoneValue}
             onChange={onPhoneChange}
             placeholder="010-XXXX-XXXX"
           />
-        </S.LabelWrapper>
-        <S.LabelWrapper>
           <S.Label>이메일</S.Label>
           <S.Input
             value={emailValue}
             onChange={onEmailChange}
             placeholder="kucc@korea.ac.kr"
           />
-        </S.LabelWrapper>
-        <S.LabelWrapper>
           <S.Label>Github</S.Label>
           <S.Input
             value={githubValue}
             onChange={onGithubChange}
             placeholder="https://github.com/XXXX"
           />
-        </S.LabelWrapper>
-        <S.LabelWrapper>
           <S.Label>Blog</S.Label>
           <S.Input
             value={blogValue}
             onChange={onBlogChange}
             placeholder="https://blog.com"
           />
-        </S.LabelWrapper>
+        </S.ContactWrapper>
       </S.SubInfoWrapper>
     </Layout>
   );

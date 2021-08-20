@@ -12,7 +12,6 @@ export const ProfileList = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-gap: 1rem;
-  margin-bottom: 2rem;
 `;
 
 export const ProfileItem = styled.div`
@@ -177,6 +176,12 @@ export const Filter = styled.div`
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-x: overlay;
+
+  transition: 0.2s ease;
+
+  :focus-within {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px;
+  }
 
   li {
     list-style: none;

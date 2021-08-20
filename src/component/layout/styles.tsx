@@ -10,4 +10,5 @@ export const Layout = styled.div`
 export const InnerContent = styled.div`
   width: 100%;
   max-width: 1020px;
+  padding-bottom: 10rem;
 `;

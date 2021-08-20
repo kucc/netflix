@@ -98,7 +98,8 @@ export const ProfileModal = styled.div<ProfileModalProps>`
   max-height: ${(props) => (props.isProfileModalOpen ? "7rem" : "0px")};
   transition: max-height 0.2s ease;
   overflow: hidden;
-  top: 3.5rem;
+  top: 4rem;
+  right: 1rem;
   background: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px;
   z-index: 1;

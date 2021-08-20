@@ -46,7 +46,7 @@ export default function Main() {
           return (
             <S.ProfileItem key={`${item.name}${item.joinDate}`}>
               <S.Image src={item.imageURL}>
-                <S.JoinDate>{item.joinDate}</S.JoinDate>
+                {item.joinDate && <S.JoinDate>{item.joinDate}</S.JoinDate>}
               </S.Image>
               <S.Content>
                 <div>

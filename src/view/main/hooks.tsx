@@ -15,7 +15,10 @@ export function useMain() {
 
   const addTag = async (e: any) => {
     const val = e.target.value;
-    if (tags.length > 9) return;
+    if (tags.length > 9) {
+      alert("태그 검색 추가는 10개까지만 가능해요.");
+      return;
+    }
     if ((e.key === "Enter" || e.key === " ") && val) {
       if (
         tags.find((tag) => tag.replace(/\s/g, "") === val.replace(/\s/g, ""))
