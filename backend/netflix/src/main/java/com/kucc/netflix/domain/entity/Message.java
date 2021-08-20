@@ -17,9 +17,12 @@ public class Message {
   @Column(name="id")
   private Long id;
 
+  @Column(name="sender")
   private Long sender;
 
+  @Column(name="receiver")
   private Long receiver;
 
+  @Column(name="createdAt")
   private Date createdAt;
 }
