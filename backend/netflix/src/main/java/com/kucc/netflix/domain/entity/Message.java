@@ -1,5 +1,11 @@
 package com.kucc.netflix.domain.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import java.util.Date;
+
 @Entity
 @Table(name="MESSAGE")
 @Getter
@@ -7,7 +13,7 @@ package com.kucc.netflix.domain.entity;
 public class Message {
 
   @Id
-  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  @GeneratedValue(strategy= GenerationType.IDENTITY)
   @Column(name="id")
   private Long id;
 
