@@ -5,12 +5,16 @@ import com.kucc.netflix.domain.entity.User;
 import com.kucc.netflix.domain.mapper.UserMapper;
 import com.kucc.netflix.domain.repository.UserRepository;
 import com.kucc.netflix.exception.UserNotFoundException;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
 
   private final UserRepository userRepository;
 
@@ -21,7 +25,7 @@ public class UserService {
   public UserDto.Response getUserProfile(Long id){
     return userRepository.findById(id)
         .map(user -> {
-          if (user.getUseYn()){
+          if (!user.getUseYn()){
             throw new UserNotFoundException();
           }
           return UserMapper.INSTANCE.toDto(user);
@@ -32,7 +36,9 @@ public class UserService {
   }
 
   public List<UserDto.Response> getUserProfileList(String tag){
-    return UserMapper.INSTANCE.toDto(userRepository.findByTag(tag));
+    Collection<User> collection = userRepository.findByTag(tag);
+    List<User> userList = new ArrayList<User>(collection);
+    return UserMapper.INSTANCE.toDto(userList);
   }
 
   public  UserDto.Response writeUserProfile (UserDto.Request req){
@@ -77,6 +83,14 @@ public class UserService {
     }).orElseGet(() -> {
       throw new UserNotFoundException();
     });
+  }
+
+  @Override
+  public User loadUserByUsername(String userId) throws UsernameNotFoundException {
+    return userRepository.findById(Long.parseLong(userId))
+        .orElseGet(() -> {
+          throw new UserNotFoundException();
+        });
   }
 
 }

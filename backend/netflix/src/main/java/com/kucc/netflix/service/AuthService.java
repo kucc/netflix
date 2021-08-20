@@ -2,6 +2,7 @@ package com.kucc.netflix.service;
 
 import com.kucc.netflix.domain.dto.UserDto;
 import com.kucc.netflix.domain.entity.User;
+import com.kucc.netflix.domain.mapper.UserMapper;
 import com.kucc.netflix.domain.repository.UserRepository;
 import com.kucc.netflix.exception.UserNotFoundException;
 import com.kucc.netflix.security.JwtTokenProvider;
@@ -11,7 +12,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthService  implements UserDetailsService {
+public class AuthService{
   private final UserRepository userRepository;
   private final PasswordEncoder passwordEncoder;
   private final JwtTokenProvider jwtTokenProvider;
@@ -22,13 +23,6 @@ public class AuthService  implements UserDetailsService {
     this.jwtTokenProvider = jwtTokenProvider;
   }
 
-  @Override
-  public User loadUserByUsername(String userId) throws UsernameNotFoundException {
-    return userRepository.findById(Long.parseLong(userId))
-        .orElseGet(() -> {
-          throw new UserNotFoundException();
-        });
-  }
 
   public String Login(UserDto.Login req){
     if(!this.passwordMatch(req.getPassword(), req.getEmail())){
@@ -49,6 +43,14 @@ public class AuthService  implements UserDetailsService {
         () -> { throw new UserNotFoundException();}
     );
     return passwordEncoder.matches(password, user.getPassword());
+  }
+
+  public UserDto.Response signUp(UserDto.Login req){
+    User user = User.builder()
+        .email(req.getEmail())
+        .password(passwordEncoder.encode(req.getPassword()))
+        .build();
+    return UserMapper.INSTANCE.toDto(userRepository.save(user));
   }
 
 }
