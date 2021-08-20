@@ -4,7 +4,7 @@ import { THEME } from "../../constant";
 export const Main = styled.div`
   width: calc(100vw - 10rem);
   max-width: 30rem;
-  height: calc(100vh - 10rem);
+  max-height: calc(100vh - 10rem);
   overflow-y: overlay;
   background-color: white;
   border-radius: 10px;

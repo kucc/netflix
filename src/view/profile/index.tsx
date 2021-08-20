@@ -5,12 +5,12 @@ import { DummyProfiles } from "../../dummy";
 import { Email, GitHub, Language, Phone } from "@material-ui/icons";
 
 interface ProfileProps {
-  profileId: string;
-  setOpen: (s: string) => void;
+  profileId: number;
+  setOpen: (n: number) => void;
 }
 
 export default function Profile({ profileId, setOpen }: ProfileProps) {
-  const item = DummyProfiles[2];
+  const item = DummyProfiles[profileId];
 
   return (
     <Modal isOpen={profileId !== null} setOpen={setOpen}>
