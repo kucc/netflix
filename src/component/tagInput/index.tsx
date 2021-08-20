@@ -1,13 +1,15 @@
 import { FormEvent, useState } from "react";
 import { useInput } from "../../hooks/useInput";
+import { PALETTE } from "../../styles/palette";
 import Tag from "../tag";
 import * as S from "./styles";
 
 interface Props {
   tags: string[];
+  tagColor: string;
 }
 
-export default function TagInput({ tags }: Props) {
+export default function TagInput({ tags, tagColor }: Props) {
   const [tagList, setTagList] = useState<string[]>(tags);
   const { value, setValue, onChange } = useInput();
 
@@ -30,7 +32,7 @@ export default function TagInput({ tags }: Props) {
   return (
     <S.Container>
       {tagList.map((tag) => (
-        <Tag canDelete onDelete={onDeleteTag}>
+        <Tag key={tag} canDelete onDelete={onDeleteTag} bgColor={tagColor}>
           {tag}
         </Tag>
       ))}
