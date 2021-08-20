@@ -6,7 +6,7 @@ export default function Toggle() {
 
   return (
     <S.Button type="button" isToggleOn={isToggleOn} onClick={() => setToggleOn((state) => !state)}>
-      <S.ToggleCircle />
+      <S.ToggleCircle isToggleOn={isToggleOn} />
     </S.Button>
   );
 }
