@@ -23,4 +23,5 @@ export const THEME = {
   gray: "#DEDEDE",
   lightgray: "#EEEEEE",
   darkgray: "#333333",
+  kucc: "#C3201F",
 };

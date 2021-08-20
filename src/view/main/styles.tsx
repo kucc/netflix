@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import { THEME } from "../../constant";
 
@@ -231,7 +232,7 @@ export const FilterInput = styled.input`
   border: none;
 `;
 
-export const AddButton = styled.button`
+export const AddButton = styled(Link)`
   background: white;
   outline: none;
   border: none;
@@ -246,4 +247,10 @@ export const AddButton = styled.button`
   align-items: center;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px;
+  color: black;
+  transition: 0.2s ease;
+  :hover {
+    background: ${THEME.darkgray};
+    color: white;
+  }
 `;

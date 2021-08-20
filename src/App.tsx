@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Main from "./view/main";
 import MyProfile from "./view/myProfile";
+import Notification from "./view/notification";
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Main} />
+          <Route exact path="/notification" component={Notification} />
           <Route exact path="/myProfile" component={MyProfile} />
         </Switch>
       </BrowserRouter>

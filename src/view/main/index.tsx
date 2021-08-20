@@ -144,7 +144,7 @@ export default function Main() {
             );
           })}
         </S.ProfileList>
-        <S.AddButton>
+        <S.AddButton to="/myProfile">
           <Add />
         </S.AddButton>
       </Layout>

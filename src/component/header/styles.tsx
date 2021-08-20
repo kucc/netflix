@@ -76,7 +76,7 @@ export const NotiButton = styled.button<NotiButtonProps>`
         width: 12px;
         height: 12px;
         border-radius: 6px;
-        background: #c3201f;
+        background: ${THEME.kucc};
       }
     `}
 `;
