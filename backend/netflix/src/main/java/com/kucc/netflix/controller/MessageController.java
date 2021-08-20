@@ -33,7 +33,7 @@ public class MessageController {
     );
   }
 
-  @GetMapping("/{id}")
+  @GetMapping
   public CommonResponse<List<MessageDto.Response>> readMessageList(@AuthenticationPrincipal User sender){
     return CommonResponse.ok(
         "success", messageService.readMessageList(sender.getId())
