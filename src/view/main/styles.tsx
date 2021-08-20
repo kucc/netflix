@@ -2,9 +2,10 @@ import styled from "styled-components/macro";
 import { THEME } from "../../constant";
 
 export const Main = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const Layout = styled.div`
