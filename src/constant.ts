@@ -1,4 +1,5 @@
 export interface Profile {
+  id: string;
   imageURL: string;
   name: string;
   joinDate: string;

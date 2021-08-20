@@ -1,28 +1,30 @@
 import { useState } from "react";
 import { ReactNode } from "react";
 import { createPortal } from "react-dom";
-import { Container, Dimmed } from "./styles";
+import { Container, Dimmed, Content } from "./styles";
 
 export interface Props {
   children: ReactNode;
   className?: string;
+  isOpen: boolean;
+  setOpen: (s: string) => void;
 }
 
 const $modalRoot = document.getElementById("modal-root");
 
-const Modal = ({ children, className }: Props) => {
-  const [isOpen, setOpen] = useState(true);
-
+const Modal = ({ children, className, isOpen, setOpen }: Props) => {
   const onCloseModal = () => {
-    setOpen(false);
+    setOpen(null as unknown as string);
   };
 
   const modalElement = (
     <>
       {isOpen && (
         <>
-          <Dimmed onClick={onCloseModal}></Dimmed>
-          <Container className={className}>{children}</Container>
+          <Container className={className}>
+            <Dimmed onClick={onCloseModal}></Dimmed>
+            <Content>{children}</Content>
+          </Container>
         </>
       )}
     </>

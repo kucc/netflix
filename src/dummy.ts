@@ -1,5 +1,6 @@
 export const DummyProfiles = [
   {
+    id: "1",
     imageURL:
       "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg",
     name: "김고양",
@@ -25,6 +26,7 @@ export const DummyProfiles = [
     blog: "",
   },
   {
+    id: "2",
     imageURL:
       "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg",
     name: "김고양",
@@ -50,6 +52,7 @@ export const DummyProfiles = [
     blog: "naver.com",
   },
   {
+    id: "3",
     imageURL:
       "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg",
     name: "김고양",
@@ -75,6 +78,7 @@ export const DummyProfiles = [
     blog: "https://r4bb1t.tistory.com",
   },
   {
+    id: "4",
     imageURL:
       "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/cat_relaxing_on_patio_other/1800x1200_cat_relaxing_on_patio_other.jpg",
     name: "lee고양",

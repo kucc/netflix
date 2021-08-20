@@ -6,6 +6,7 @@ export function useMain() {
   const [profiles, setProfiles] = useState(DummyProfiles);
   const [filteredProfiles, setFilteredProfiles] = useState(DummyProfiles);
   const [tags, setTags] = useState([] as string[]);
+  const [profileModal, setProfileModal] = useState(null as unknown as string);
 
   const removeTag = (index: number) => {
     const newTags = [...tags];
@@ -47,5 +48,14 @@ export function useMain() {
     );
   };
 
-  return { profiles, filteredProfiles, tags, removeTag, addTag, applyFilter };
+  return {
+    profiles,
+    filteredProfiles,
+    tags,
+    removeTag,
+    addTag,
+    applyFilter,
+    profileModal,
+    setProfileModal,
+  };
 }

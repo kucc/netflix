@@ -17,6 +17,11 @@ export const ProfileList = styled.div`
 export const ProfileItem = styled.div`
   background: white;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  :hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 20px;
+  }
 `;
 
 interface ImageProps {
