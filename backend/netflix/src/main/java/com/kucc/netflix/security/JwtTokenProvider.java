@@ -52,7 +52,8 @@ public class JwtTokenProvider {
 
   // 토큰에서 회원 정보 추출
   public String getUserPk(String token){
-    return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getSubject();
+    return Jwts.parserBuilder().setSigningKey(secretKey)
+    .build().parseClaimsJws(token).getBody().getSubject();
   }
 
   // request의 헤더에서 token을 가져온다.
@@ -63,7 +64,8 @@ public class JwtTokenProvider {
   //토큰의 유효성 확인
   public boolean validateToken(String jwtToken){
     try{
-      Jws<Claims> claims = Jwts.parserBuilder().setSigningKey(secretKey).parseClaimsJws(jwtToken);
+      Jws<Claims> claims = Jwts.parserBuilder().setSigningKey(secretKey)
+          .build().parseClaimsJws(jwtToken);
       return !claims.getBody().getExpiration().before(new Date());
     } catch (Exception e){
       return false;
