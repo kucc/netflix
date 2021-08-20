@@ -57,12 +57,11 @@ interface NotiButtonProps {
   hasNoti: boolean;
 }
 
-export const NotiButton = styled.button<NotiButtonProps>`
+export const NotiButton = styled.div<NotiButtonProps>`
   position: relative;
-  background: none;
-  border: none;
   display: flex;
   align-items: center;
+  margin-right: 0.2rem;
   svg {
     font-size: 1.6rem;
   }
