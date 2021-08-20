@@ -49,21 +49,26 @@ public class UserService implements UserDetailsService {
   public  UserDto.Response editUserProfile (Long id, UserDto.Request req){
     return userRepository.findById(id)
         .map(user -> {
+          StringBuilder interests = new StringBuilder();
+          for(String it:req.getInterest()){
+            interests.append(it);
+          }
 
-//         for(){
-//
-//         }
+          StringBuilder stacks = new StringBuilder();
+          for(String it: req.getStack()){
+            stacks.append(it);
+          }
           user.setBlog(req.getBlog())
               .setComment(req.getComment())
               .setEtc(req.getEtc())
               .setGithub(req.getGithub())
               .setHobby(req.getHobby())
-              .setInterest(req.getInterest())
+              .setInterest(interests.toString())
               .setJob(req.getJob())
               .setMajor(req.getMajor())
               .setName(req.getName())
               .setPhone(req.getPhone())
-              .setStack(req.getStack())
+              .setStack(stacks.toString())
               .setJoinDate(req.getJoinDate());
           return user;
         })
