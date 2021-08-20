@@ -1,83 +1,85 @@
+import Modal from "../../component/modal";
 import * as S from "./styles";
-import { MainContainer } from "../../component/global-style/mainContainer";
-import Toggle from "../../component/toggle";
-import { useInput } from "../../hook/useInput";
-import TagInput from "../../component/tagInput";
+import Tag from "../../component/tag";
 
 export default function Profile() {
-  const { value: nameValue, onChange: onNameChange } = useInput();
-  const { value: majorValue, onChange: onMajorChange } = useInput();
-  const { value: jobValue, onChange: onJobChange } = useInput();
-  const { value: joinDateValue, onChange: onJoinDateChange } = useInput();
-  const { value: phoneValue, onChange: onPhoneChange } = useInput();
-  const { value: emailValue, onChange: onEmailChange } = useInput();
-  const { value: githubValue, onChange: onGithubChange } = useInput();
-  const { value: blogValue, onChange: onBlogChange } = useInput();
   const tags = ["React", "Django", "Javascript"];
 
   return (
-    <MainContainer>
+    <Modal>
       <S.Main>
-        <S.TitleWrapper>
-          <S.Title>내 프로필</S.Title>
-          <S.ToggleWrapper>
-            <span>내 프로필 공개</span>
-            <Toggle />
-          </S.ToggleWrapper>
-        </S.TitleWrapper>
         <S.ProfileImageWrapper>
-          <S.profileImage />
+          <S.ProfileImage alt="사용자 이미지" />
           <S.CoreInfoWrapper>
             <S.LabelWrapper>
               <S.Label>이름</S.Label>
-              <S.Input value={nameValue} onChange={onNameChange} />
+              <S.Info>김기융</S.Info>
             </S.LabelWrapper>
             <S.LabelWrapper>
               <S.Label>학과</S.Label>
-              <S.Input value={majorValue} onChange={onMajorChange} />
+              <S.Info>컴퓨터학과</S.Info>
             </S.LabelWrapper>
             <S.LabelWrapper>
               <S.Label>소속</S.Label>
-              <S.Input value={jobValue} onChange={onJobChange} />
+              <S.Info>네이버...</S.Info>
             </S.LabelWrapper>
             <S.LabelWrapper>
               <S.Label>가입시기</S.Label>
-              <S.Input value={joinDateValue} onChange={onJoinDateChange} />
+              <S.Info>2021년 1학기</S.Info>
             </S.LabelWrapper>
           </S.CoreInfoWrapper>
         </S.ProfileImageWrapper>
         <S.SubInfoWrapper>
           <S.LabelWrapper>
             <S.Label>취미</S.Label>
-            <TagInput tags={tags} />
+            <S.TagWrapper>
+              {tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </S.TagWrapper>
           </S.LabelWrapper>
           <S.LabelWrapper>
             <S.Label>관심 분야</S.Label>
+            <S.TagWrapper>
+              {tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </S.TagWrapper>
           </S.LabelWrapper>
           <S.LabelWrapper>
             <S.Label>기술 스택</S.Label>
+            <S.TagWrapper>
+              {tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </S.TagWrapper>
           </S.LabelWrapper>
           <S.LabelWrapper>
             <S.Label>기타</S.Label>
+            <S.TagWrapper>
+              {tags.map((tag) => (
+                <Tag key={tag}>{tag}</Tag>
+              ))}
+            </S.TagWrapper>
           </S.LabelWrapper>
           <S.LabelWrapper>
             <S.Label>전화번호</S.Label>
-            <S.Input value={phoneValue} onChange={onPhoneChange} />
+            <S.Info>010-1234-1234</S.Info>
           </S.LabelWrapper>
           <S.LabelWrapper>
             <S.Label>이메일</S.Label>
-            <S.Input value={emailValue} onChange={onEmailChange} />
+            <S.Info>abc@abc.com</S.Info>
           </S.LabelWrapper>
           <S.LabelWrapper>
             <S.Label>Github</S.Label>
-            <S.Input value={githubValue} onChange={onGithubChange} />
+            <S.Info>https://github.com</S.Info>
           </S.LabelWrapper>
           <S.LabelWrapper>
             <S.Label>Blog</S.Label>
-            <S.Input value={blogValue} onChange={onBlogChange} />
+            <S.Info>https://blog.com</S.Info>
           </S.LabelWrapper>
         </S.SubInfoWrapper>
       </S.Main>
-    </MainContainer>
+    </Modal>
   );
 }

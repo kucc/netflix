@@ -18,7 +18,7 @@ export const Container = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
-  padding: 3rem 2rem;
+  padding: 5rem 5rem;
   transform: translate(-50%, -50%);
   background-color: ${PALETTE.WHITE};
   border-radius: 10px;
