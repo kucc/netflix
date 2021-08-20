@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { useInput } from "../../hook/useInput";
+import { useInput } from "../../hooks/useInput";
 import Tag from "../tag";
 import * as S from "./styles";
 

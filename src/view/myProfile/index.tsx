@@ -1,8 +1,8 @@
 import * as S from "./styles";
-import { MainContainer } from "../../component/global-style/mainContainer";
 import Toggle from "../../component/toggle";
-import { useInput } from "../../hook/useInput";
 import TagInput from "../../component/tagInput";
+import { MainContainer } from "../../component/globalStyle/mainContainer";
+import { useInput } from "../../hooks/useInput";
 
 export default function MyProfile() {
   const { value: nameValue, onChange: onNameChange } = useInput();

@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100%;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     overflow-x: hidden;
   }
 
