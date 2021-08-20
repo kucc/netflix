@@ -13,15 +13,7 @@ import java.util.List;
 public interface UserMapper {
   UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-  @Mappings({
-      @Mapping(target="email", ignore=true),
-      @Mapping(target="password", ignore=true),
-     // @Mapping(target="useYn",ignore=true),
-      @Mapping(target="authorities", ignore = true)
-  })
   User toEntity(UserDto.Request dto);
   List<UserDto.Response> toDto(List<User> list);
-
-
   UserDto.Response toDto(User user);
 }

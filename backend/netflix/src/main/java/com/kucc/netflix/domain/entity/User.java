@@ -45,7 +45,6 @@ public class User implements UserDetails {
 
   @Column(name="hobby")
   @Setter
-  private String hobby;
 
   @Column(name="interest")
   @Setter
@@ -62,6 +61,10 @@ public class User implements UserDetails {
   @Column(name="comment")
   @Setter
   private String comment;
+
+  @Column(name="hobby")
+  @Setter
+  private String hobby;
 
   @Column(name="phone")
   @Setter
@@ -83,13 +86,27 @@ public class User implements UserDetails {
   @Setter
   private Boolean useYn;
 
+
   @Builder
-  public User(String email, String password){
+  public User(String email, String password, String job,String major,String hobby,String interest,String stack,
+              String etc,String comment,String phone, String github,String blog,String joinDate){
     this.email = email;
     this.password = password;
     this.useYn = true;
+    this.job = job;
+    this.major=major;
+    this.hobby=hobby;
+    this.interest=interest;
+    this.stack=stack;
+    this.etc = etc;
+    this.comment=comment;
+    this.phone=phone;
+    this.github=github;
+    this.blog=blog;
+    this.joinDate=joinDate;
   }
-/*필요없음*/
+
+  /*필요없음*/
 @JsonIgnore
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
