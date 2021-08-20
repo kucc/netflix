@@ -24,6 +24,7 @@ export const Logo = styled.img`
   width: 6rem;
   margin-top: 0.5rem;
   margin-right: 1rem;
+  cursor: pointer;
 `;
 
 export const Title = styled.div`
