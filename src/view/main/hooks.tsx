@@ -20,14 +20,12 @@ export function useMain() {
       alert("태그 검색 추가는 10개까지만 가능해요.");
       return;
     }
-    if ((e.key === "Enter" || e.key === " ") && val) {
-      if (
-        tags.find((tag) => tag.replace(/\s/g, "") === val.replace(/\s/g, ""))
-      ) {
+    if (e.key === "Enter" && val) {
+      if (tags.find((tag) => tag === val)) {
         return;
       }
       e.target.value = "";
-      setTags([...tags, val.replace(/\s/g, "")]);
+      setTags([...tags, val]);
     } else if (e.key === "Backspace" && !val) {
       removeTag(tags.length - 1);
     }
