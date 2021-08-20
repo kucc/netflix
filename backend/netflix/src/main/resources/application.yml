@@ -1,14 +1,10 @@
-spring:
-  h2:
-    console:
-      enabled: true
-      path: /test_db
+server:
+  servlet:
+    context-path: "/api"
 
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:file:~/test_db;AUTO_SERVER=TRUE
-    username: test
-    password: 1234
+spring:
+  profiles:
+    include:
+      - local_h2
 
 spring.jpa.hibernate.ddl-auto: create-drop
-spring.datasource.initialization-mode: always
