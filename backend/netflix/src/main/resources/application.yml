@@ -5,6 +5,7 @@ server:
 spring:
   profiles:
     include:
-      - local_h2
+      - real_mariadb
 
 spring.jpa.hibernate.ddl-auto: create-drop
+
