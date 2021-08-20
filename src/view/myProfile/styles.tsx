@@ -24,11 +24,12 @@ export const TitleWrapper = styled.div`
 export const Title = styled.h1`
   font-size: 2rem;
   font-weight: 700;
+  margin: 0;
 `;
 
 export const ToggleWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 1rem;
   & > span {
     font-weight: 700;
@@ -47,6 +48,7 @@ export const ProfileImage = styled.div<ImageProps>`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-top: 1rem;
   margin-bottom: 3rem;
   display: flex;
   justify-content: center;

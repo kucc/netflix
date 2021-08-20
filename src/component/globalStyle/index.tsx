@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components/macro";
+import { THEME } from "../../constant";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -21,6 +22,16 @@ const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    overflow-y: overlay;
+    ::-webkit-scrollbar {
+      width: 4px;
+      background: none;
+    }
+    ::-webkit-scrollbar-thumb {
+      width: 4px;
+      border-radius: 2px;
+      background: ${THEME.kucc};
+    }
   }
 
   button {

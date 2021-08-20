@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { THEME } from "../../constant";
 
 export const Main = styled.div`
@@ -121,12 +121,18 @@ export const ContactList = styled.div`
   margin-top: 0.5rem;
 `;
 
+const bounce = keyframes`
+  0%   { transform: translateY(0); }
+  100%  { transform: translateY(-0.3rem); }
+`;
+
 export const ContactButton = styled.button`
   border: 1px solid ${THEME.darkgray};
   color: ${THEME.darkgray};
   outline: none;
   background: none;
   border-radius: 0.2rem;
+  animation: ${bounce} 0.5s ease infinite alternate;
 `;
 
 interface ImageProps {

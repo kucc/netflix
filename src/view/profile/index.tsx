@@ -10,7 +10,6 @@ interface ProfileProps {
 }
 
 export default function Profile({ profileId, setOpen }: ProfileProps) {
-  const tags = ["React", "Django", "Javascript"];
   const item = DummyProfiles[2];
 
   return (

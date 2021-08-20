@@ -28,6 +28,7 @@ export const THEME = {
   gray: "#DEDEDE",
   lightgray: "#EEEEEE",
   darkgray: "#333333",
+  kucc: "#C3201F",
 };
 
 export const BASE_URL = "http://49.50.162.195:8080";

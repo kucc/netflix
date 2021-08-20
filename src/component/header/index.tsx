@@ -28,7 +28,7 @@ export default function Header() {
             <S.Profile src="https://images-na.ssl-images-amazon.com/images/I/81BES%2BtsVvL.png"></S.Profile>
             <S.ProfileModal isProfileModalOpen={isProfileModalOpen}>
               <Link to="/myProfile">내 정보</Link>
-              <Link to="/">알림 ({notiCount})</Link>
+              <Link to="/notification">알림 ({notiCount})</Link>
             </S.ProfileModal>
           </S.ProfileButton>
         </div>
