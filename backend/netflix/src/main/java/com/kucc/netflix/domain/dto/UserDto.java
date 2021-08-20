@@ -14,4 +14,9 @@ public class UserDto {
   public static class Response{
 
   }
+
+  @Getter
+  public static class Request {
+
+  }
 }
