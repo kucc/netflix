@@ -60,8 +60,10 @@ export const NotiButton = styled.button<NotiButtonProps>`
   position: relative;
   background: none;
   border: none;
+  display: flex;
+  align-items: center;
   svg {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
   ${(props) =>
     props.hasNoti &&
@@ -109,5 +111,10 @@ export const ProfileModal = styled.div<ProfileModalProps>`
     color: black;
     font-weight: 600;
     padding: 0.8rem 2rem;
+    width: 100%;
+    transition: 0.2s ease;
+    :hover {
+      background: ${THEME.lightgray};
+    }
   }
 `;

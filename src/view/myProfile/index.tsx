@@ -84,13 +84,13 @@ export default function MyProfile() {
           <S.Input
             value={githubValue}
             onChange={onGithubChange}
-            placeholder="https://github.com/XXXX"
+            placeholder="Github ID"
           />
           <S.Label>Blog</S.Label>
           <S.Input
             value={blogValue}
             onChange={onBlogChange}
-            placeholder="https://blog.com"
+            placeholder="https://www.blog.com"
           />
         </S.ContactWrapper>
       </S.SubInfoWrapper>

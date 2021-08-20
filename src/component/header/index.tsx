@@ -5,6 +5,7 @@ import * as S from "./styles";
 
 export default function Header() {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [notiCount, setNotiCount] = useState(0);
   return (
     <S.Header>
       <S.Layout>
@@ -16,14 +17,14 @@ export default function Header() {
           <S.ProfileButton
             onClick={() => setIsProfileModalOpen(!isProfileModalOpen)}
           >
-            <S.NotiButton hasNoti={true}>
+            <S.NotiButton hasNoti={notiCount > 0}>
               <Notifications />
             </S.NotiButton>
             <S.Name>김기융</S.Name>
             <S.Profile src="https://images-na.ssl-images-amazon.com/images/I/81BES%2BtsVvL.png"></S.Profile>
             <S.ProfileModal isProfileModalOpen={isProfileModalOpen}>
               <Link to="/myProfile">내 정보</Link>
-              <Link to="/">알림 (1)</Link>
+              <Link to="/">알림 ({notiCount})</Link>
             </S.ProfileModal>
           </S.ProfileButton>
         </div>
