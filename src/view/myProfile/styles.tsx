@@ -2,9 +2,15 @@ import styled from "styled-components";
 import { PALETTE } from "../../styles/palette";
 
 export const Main = styled.div`
-  padding: 0 2rem;
+  width: 100vw;
   display: flex;
   flex-direction: column;
+  align-items: center;
+`;
+
+export const Layout = styled.div`
+  width: 100%;
+  max-width: 1020px;
 `;
 
 export const TitleWrapper = styled.div`

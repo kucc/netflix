@@ -1,7 +1,14 @@
 import * as S from "./styles";
 import { Profile } from "../../constant";
 import { DummyProfiles } from "../../dummy";
-import { Email, GitHub, Language, Phone, Search } from "@material-ui/icons";
+import {
+  Add,
+  Email,
+  GitHub,
+  Language,
+  Phone,
+  Search,
+} from "@material-ui/icons";
 import Header from "../../component/header";
 import { useState } from "react";
 
@@ -165,6 +172,9 @@ export default function Main() {
           })}
         </S.ProfileList>
       </S.Layout>
+      <S.AddButton>
+        <Add />
+      </S.AddButton>
     </S.Main>
   );
 }

@@ -18,6 +18,7 @@ export const ProfileList = styled.div`
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
   grid-gap: 1rem;
+  margin-bottom: 2rem;
 `;
 
 export const ProfileItem = styled.div`
@@ -223,4 +224,21 @@ export const FilterInput = styled.input`
   background: none;
   outline: none;
   border: none;
+`;
+
+export const AddButton = styled.button`
+  background: white;
+  outline: none;
+  border: none;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 4rem;
+  height: 4rem;
+  z-index: 2;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px;
 `;

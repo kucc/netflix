@@ -3,7 +3,7 @@ import { THEME } from "../../constant";
 
 export const Header = styled.div`
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px;
@@ -22,13 +22,13 @@ export const Layout = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 8rem;
+  width: 6rem;
   margin-top: 0.5rem;
   margin-right: 1rem;
 `;
 
 export const Title = styled.div`
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 700;
 `;
 
@@ -75,7 +75,7 @@ export const NotiButton = styled.button<NotiButtonProps>`
         width: 12px;
         height: 12px;
         border-radius: 6px;
-        background: red;
+        background: #c3201f;
       }
     `}
 `;
