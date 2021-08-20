@@ -1,16 +1,10 @@
 import styled from "styled-components/macro";
 import { THEME } from "../../constant";
 
-export const Main = styled.div`
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const Layout = styled.div`
-  width: 100%;
-  max-width: 1020px;
+export const MainTitle = styled.div`
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 5rem;
 `;
 
 export const ProfileList = styled.div`
@@ -174,7 +168,8 @@ export const Filter = styled.div`
   width: 100%;
   height: 3rem;
   background: ${THEME.lightgray};
-  margin: 2rem 0;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   border-radius: 1.5rem;
   display: flex;
   align-items: center;

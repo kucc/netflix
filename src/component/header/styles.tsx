@@ -3,10 +3,9 @@ import { THEME } from "../../constant";
 
 export const Header = styled.div`
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   display: flex;
   justify-content: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px;
 `;
 
 export const Layout = styled.div`
