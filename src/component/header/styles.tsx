@@ -79,3 +79,35 @@ export const NotiButton = styled.button<NotiButtonProps>`
       }
     `}
 `;
+
+export const ProfileButton = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+interface ProfileModalProps {
+  isProfileModalOpen: boolean;
+}
+
+export const ProfileModal = styled.div<ProfileModalProps>`
+  position: absolute;
+  height: auto;
+  max-height: ${(props) => (props.isProfileModalOpen ? "7rem" : "0px")};
+  transition: max-height 0.2s ease;
+  overflow: hidden;
+  top: 3.5rem;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 10px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: black;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+  }
+`;

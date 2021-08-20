@@ -1,7 +1,10 @@
 import { Notifications } from "@material-ui/icons";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import * as S from "./styles";
 
 export default function Header() {
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   return (
     <S.Header>
       <S.Layout>
@@ -13,8 +16,16 @@ export default function Header() {
           <S.NotiButton hasNoti={true}>
             <Notifications />
           </S.NotiButton>
-          <S.Name>김기융</S.Name>
-          <S.Profile src="https://images-na.ssl-images-amazon.com/images/I/81BES%2BtsVvL.png"></S.Profile>
+          <S.ProfileButton
+            onClick={() => setIsProfileModalOpen(!isProfileModalOpen)}
+          >
+            <S.Name>김기융</S.Name>
+            <S.Profile src="https://images-na.ssl-images-amazon.com/images/I/81BES%2BtsVvL.png"></S.Profile>
+            <S.ProfileModal isProfileModalOpen={isProfileModalOpen}>
+              <Link to="/myProfile">내 정보</Link>
+              <Link to="/">알림 (1)</Link>
+            </S.ProfileModal>
+          </S.ProfileButton>
         </div>
       </S.Layout>
     </S.Header>
