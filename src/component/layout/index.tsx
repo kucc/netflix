@@ -3,7 +3,7 @@ import Header from "../header";
 import * as S from "./styles";
 
 interface LayoutProps {
-  children?: ReactNode[];
+  children?: ReactNode[] | ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {

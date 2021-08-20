@@ -7,6 +7,7 @@ export default function Header() {
   const history = useHistory();
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [notiCount, setNotiCount] = useState(0);
+
   return (
     <S.Header>
       <S.Layout>

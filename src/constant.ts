@@ -16,6 +16,11 @@ export interface Profile {
   blog: string;
 }
 
+export interface LoginParam {
+  email: string;
+  password: string;
+}
+
 export const THEME = {
   red: "#FEC7CA",
   yellow: "#FFE7CD",
@@ -24,3 +29,6 @@ export const THEME = {
   lightgray: "#EEEEEE",
   darkgray: "#333333",
 };
+
+export const BASE_URL = "http://49.50.162.195:8080";
+export const END_POINT = `${BASE_URL}/api`;
