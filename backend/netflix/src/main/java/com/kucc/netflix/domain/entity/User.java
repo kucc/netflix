@@ -83,13 +83,31 @@ public class User implements UserDetails {
   @Setter
   private Boolean useYn;
 
-  @Builder
-  public User(String email, String password){
+  public User(String email, String password) {
     this.email = email;
     this.password = password;
     this.useYn = true;
   }
-/*필요없음*/
+
+  @Builder
+  public User(String email, String password, String job,String major,String hobby,String interest,String stack,
+              String etc,String comment,String phone, String github,String blog,String joinDate){
+    this.email = email;
+    this.password = password;
+    this.job = job;
+    this.major=major;
+    this.hobby=hobby;
+    this.interest=interest;
+    this.stack=stack;
+    this.etc = etc;
+    this.comment=comment;
+    this.phone=phone;
+    this.github=github;
+    this.blog=blog;
+    this.joinDate=joinDate;
+  }
+
+  /*필요없음*/
 @JsonIgnore
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {

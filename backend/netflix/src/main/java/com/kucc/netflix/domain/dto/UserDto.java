@@ -2,6 +2,8 @@ package com.kucc.netflix.domain.dto;
 
 import lombok.*;
 
+import java.util.List;
+
 public class UserDto {
 
   @Getter @Setter
@@ -26,9 +28,9 @@ public class UserDto {
 
     private String hobby;
 
-    private String interest;
+    private List<String> interest;
 
-    private String stack;
+    private List<String> stack;
 
     private String etc;
 
@@ -55,9 +57,9 @@ public class UserDto {
 
     private String hobby;
 
-    private String interest;
+    private List<String> interest;
 
-    private String stack;
+    private List<String> stack;
 
     private String etc;
 

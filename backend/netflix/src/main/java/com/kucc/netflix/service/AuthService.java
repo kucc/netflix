@@ -3,6 +3,7 @@ package com.kucc.netflix.service;
 import com.kucc.netflix.domain.dto.UserDto;
 import com.kucc.netflix.domain.entity.User;
 import com.kucc.netflix.domain.mapper.UserMapper;
+import com.kucc.netflix.domain.mapper.UserMapperImpl;
 import com.kucc.netflix.domain.repository.UserRepository;
 import com.kucc.netflix.exception.UserNotFoundException;
 import com.kucc.netflix.security.JwtTokenProvider;
@@ -16,11 +17,13 @@ public class AuthService{
   private final UserRepository userRepository;
   private final PasswordEncoder passwordEncoder;
   private final JwtTokenProvider jwtTokenProvider;
+  private final UserMapperImpl userMapper;
 
-  public AuthService(UserRepository userRepository,PasswordEncoder passwordEncoder, JwtTokenProvider jwtTokenProvider) {
+  public AuthService(UserRepository userRepository,PasswordEncoder passwordEncoder, JwtTokenProvider jwtTokenProvider, UserMapperImpl userMapper) {
     this.userRepository = userRepository;
     this.passwordEncoder = passwordEncoder;
     this.jwtTokenProvider = jwtTokenProvider;
+    this.userMapper = userMapper;
   }
 
 
@@ -50,7 +53,7 @@ public class AuthService{
         .email(req.getEmail())
         .password(passwordEncoder.encode(req.getPassword()))
         .build();
-    return UserMapper.INSTANCE.toDto(userRepository.save(user));
+    return userMapper.toDto(userRepository.save(user));
   }
 
 }
