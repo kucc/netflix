@@ -148,7 +148,7 @@ export default function Main() {
           <Add />
         </S.AddButton>
       </Layout>
-      {profileModal && (
+      {profileModal !== null && (
         <Profile profileId={profileModal} setOpen={setProfileModal} />
       )}
     </>

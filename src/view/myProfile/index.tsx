@@ -15,7 +15,7 @@ export default function MyProfile() {
   const { value: emailValue, onChange: onEmailChange } = useInput();
   const { value: githubValue, onChange: onGithubChange } = useInput();
   const { value: blogValue, onChange: onBlogChange } = useInput();
-  const tags = ["React", "Django", "Javascript"];
+  const tags = [] as string[];
 
   return (
     <Layout>
@@ -36,13 +36,29 @@ export default function MyProfile() {
       <S.CoreInfoWrapper>
         <S.LabelWrapper>
           <S.Label>이름*</S.Label>
-          <S.Input value={nameValue} onChange={onNameChange} placeholder="홍길동" />
+          <S.Input
+            value={nameValue}
+            onChange={onNameChange}
+            placeholder="홍길동"
+          />
           <S.Label>학과</S.Label>
-          <S.Input value={majorValue} onChange={onMajorChange} placeholder="OO학과" />
+          <S.Input
+            value={majorValue}
+            onChange={onMajorChange}
+            placeholder="OO학과"
+          />
           <S.Label>소속</S.Label>
-          <S.Input value={jobValue} onChange={onJobChange} placeholder="대학생/대학원생/직장인(OO 회사)" />
+          <S.Input
+            value={jobValue}
+            onChange={onJobChange}
+            placeholder="대학생/대학원생/직장인(OO 회사)"
+          />
           <S.Label>가입시기</S.Label>
-          <S.Input value={joinDateValue} onChange={onJoinDateChange} placeholder="2021-1" />
+          <S.Input
+            value={joinDateValue}
+            onChange={onJoinDateChange}
+            placeholder="2021-1"
+          />
         </S.LabelWrapper>
       </S.CoreInfoWrapper>
       <S.SubInfoWrapper>
@@ -58,13 +74,29 @@ export default function MyProfile() {
         </S.TagWrapper>
         <S.ContactWrapper>
           <S.Label>전화번호</S.Label>
-          <S.Input value={phoneValue} onChange={onPhoneChange} placeholder="010-XXXX-XXXX" />
+          <S.Input
+            value={phoneValue}
+            onChange={onPhoneChange}
+            placeholder="010-XXXX-XXXX"
+          />
           <S.Label>이메일</S.Label>
-          <S.Input value={emailValue} onChange={onEmailChange} placeholder="kucc@korea.ac.kr" />
+          <S.Input
+            value={emailValue}
+            onChange={onEmailChange}
+            placeholder="kucc@korea.ac.kr"
+          />
           <S.Label>Github</S.Label>
-          <S.Input value={githubValue} onChange={onGithubChange} placeholder="Github ID" />
+          <S.Input
+            value={githubValue}
+            onChange={onGithubChange}
+            placeholder="Github ID"
+          />
           <S.Label>Blog</S.Label>
-          <S.Input value={blogValue} onChange={onBlogChange} placeholder="https://www.blog.com" />
+          <S.Input
+            value={blogValue}
+            onChange={onBlogChange}
+            placeholder="https://www.blog.com"
+          />
         </S.ContactWrapper>
       </S.SubInfoWrapper>
     </Layout>

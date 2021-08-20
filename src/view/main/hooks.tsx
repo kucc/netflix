@@ -1,3 +1,5 @@
+import axios from "axios";
+import { useEffect } from "react";
 import { useState } from "react";
 import { Profile } from "../../constant";
 import { DummyProfiles } from "../../dummy";
@@ -6,7 +8,17 @@ export function useMain() {
   const [profiles, setProfiles] = useState(DummyProfiles);
   const [filteredProfiles, setFilteredProfiles] = useState(DummyProfiles);
   const [tags, setTags] = useState([] as string[]);
-  const [profileModal, setProfileModal] = useState(null as unknown as string);
+  const [profileModal, setProfileModal] = useState(null as unknown as number);
+
+  useEffect(() => {
+    (async () => {
+      const result = await axios.get("http://49.50.162.195:8080/api/profile", {
+        headers: {},
+      });
+      setProfiles(result.data);
+      setFilteredProfiles(result.data);
+    })();
+  }, []);
 
   const removeTag = (index: number) => {
     const newTags = [...tags];

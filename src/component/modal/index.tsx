@@ -7,14 +7,14 @@ export interface Props {
   children: ReactNode;
   className?: string;
   isOpen: boolean;
-  setOpen: (s: string) => void;
+  setOpen: (n: number) => void;
 }
 
 const $modalRoot = document.getElementById("modal-root");
 
 const Modal = ({ children, className, isOpen, setOpen }: Props) => {
   const onCloseModal = () => {
-    setOpen(null as unknown as string);
+    setOpen(null as unknown as number);
   };
 
   const modalElement = (
