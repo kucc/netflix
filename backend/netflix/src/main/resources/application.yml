@@ -1,0 +1,10 @@
+server:
+  servlet:
+    context-path: "/api"
+
+spring:
+  profiles:
+    include:
+      - local_h2
+
+spring.jpa.hibernate.ddl-auto: create-drop
