@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import GlobalStyle from "./component/global-style/global-style";
+import GlobalStyle from "./component/globalStyle";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
