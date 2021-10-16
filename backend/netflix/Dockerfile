@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk AS builder
+FROM openjdk:11-jdk@sha256:1b04b1958a4a61900feec994e3938a2a5d8f88db8ec9515f46a25cbe561b65d9 AS builder
 COPY gradlew .
 COPY gradle gradle
 COPY build.gradle .
@@ -8,7 +8,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew clean build
 RUN ./gradlew bootJar
 
-FROM openjdk:11-jdk
+FROM openjdk:11-jdk@sha256:1b04b1958a4a61900feec994e3938a2a5d8f88db8ec9515f46a25cbe561b65d9
 COPY --from=builder build/libs/*.jar app.jar
 
 
